@@ -1,12 +1,15 @@
 import html
 import random, re
 import wikipedia
+import time
 from typing import Optional, List
 from requests import get
 
 from io import BytesIO
 from random import randint
+from subprocess import Popen,PIPE
 import requests as r
+
 
 from telegram import (
     Message,
@@ -495,6 +498,13 @@ def stats(update, context):
         "Current stats:\n" + "\n".join([mod.__stats__() for mod in STATS])
     )
 
+@run_async 
+def ping(update,context):
+    start_time = time.time()
+    requests.get('https://api.telegram.org')
+    end_time = time.time()
+    ping_time = round((end_time - start_time)*1000, 3)
+    update.effective_message.reply_text("*Your current ping😶*\n`{}ms`".format(ping_time), parse_mode=ParseMode.MARKDOWN)
 
 # /ip is for private use
 __help__ = """
@@ -514,6 +524,7 @@ An "odds and ends" module for small, simple commands which don't really fit anyw
 __mod_name__ = "Miscs"
 
 ID_HANDLER = DisableAbleCommandHandler("id", get_id, pass_args=True)
+PING_HANDLER=DisableAbleCommandHandler("ping",ping)
 INFO_HANDLER = DisableAbleCommandHandler("info", info, pass_args=True)
 ECHO_HANDLER = CommandHandler("echo", echo, filters=CustomFilters.sudo_filter)
 MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help, filters=Filters.private)
@@ -544,3 +555,4 @@ dispatcher.add_handler(GETLINK_HANDLER)
 dispatcher.add_handler(STAFFLIST_HANDLER)
 dispatcher.add_handler(REDDIT_MEMES_HANDLER)
 dispatcher.add_handler(SRC_HANDLER)
+dispatcher.add_handler(PING_HANDLER)
