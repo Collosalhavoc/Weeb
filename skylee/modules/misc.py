@@ -499,6 +499,7 @@ def stats(update, context):
     )
 
 @run_async 
+@typing_action
 def ping(update, context):
     start_time = time.time()
     requests.get('https://api.telegram.org')
