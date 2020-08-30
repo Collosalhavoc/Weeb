@@ -3,8 +3,8 @@ from typing import List
 from telegram import Bot, Update
 from telegram.ext import run_async
  
-from tg_bot import dispatcher
-from tg_bot.modules.disable import DisableAbleCommandHandler
+from skylee import dispatcher
+from skylee.modules.disable import DisableAbleCommandHandler
  
 normiefont = [
     "a",
