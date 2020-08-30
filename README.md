@@ -175,13 +175,7 @@ it is necessary to migrate it in the db.
 The `__stats__()` function is for retrieving module statistics, eg number of users, number of chats. This is accessed 
 through the `/stats` command, which is only available to the bot owner.
 
-## The Easy lazy way
 
-# Deploy to Heroku 
-
-Deploy your bot directly and assign env vars in heroku without needed to change the config file
-
-you can just deploy your app at the touch of a single button👇👇
 
 ## The Easy lazy way
 
