@@ -9,7 +9,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/843cdeb7f4124dd39eb3930939478259)](https://app.codacy.com/manual/starry69/skyleebot?utm_source=github.com&utm_medium=referral&utm_content=starry69/skyleebot&utm_campaign=Badge_Grade_Dashboard)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Collosalhavoc/Weeb) 
+
 ![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green) 
 
 
@@ -175,3 +175,20 @@ it is necessary to migrate it in the db.
 The `__stats__()` function is for retrieving module statistics, eg number of users, number of chats. This is accessed 
 through the `/stats` command, which is only available to the bot owner.
 
+## The Easy lazy way
+
+# Deploy to Heroku 
+
+Deploy your bot directly and assign env vars in heroku without needed to change the config file
+
+you can just deploy your app at the touch of a single button👇👇
+
+## The Easy lazy way
+
+# Deploy to Heroku 
+
+Deploy your bot directly and assign env vars in heroku without needed to change the config file
+
+You can just deploy your app at the touch of a single button👇👇
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Collosalhavoc/Weeb)
