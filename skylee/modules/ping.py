@@ -7,6 +7,7 @@ from skylee.modules.disable import DisableAbleCommandHandler
 
 @run_async 
 def ping(update, context):
+    args=context.args
     start_time = time.time()
     requests.get('https://api.telegram.org')
     end_time = time.time()
