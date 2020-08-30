@@ -13,10 +13,12 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
-![logo](https://telegra.ph/file/0dd4a92bb893c1aaa6cee.jpg)
+
 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a88ef893-32f6-452b-9ba4-9f609ac8ad35/deploy-status)](https://app.netlify.com/sites/chirag0w0/deploys)
+
+![Ryumi](https://telegra.ph/file/e1779b1059846e75e3f93.jpg)
 
 A modular telegram Python bot running on python3 with an sqlalchemy database.
 
