@@ -1,9 +1,6 @@
 # Ryumi
 
-> **:warning: Project unmaintained!** Developers and maintainers of this bot doesn't have much free time to maintain the project. You have the right
-> to fork the code, but no technical support will be given if problems arise on your fork.
->
-> See also from the updates channel: <https://t.me/skyleebot/61>
+
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Naereen/)
