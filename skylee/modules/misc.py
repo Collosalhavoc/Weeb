@@ -502,10 +502,11 @@ def stats(update, context):
 @typing_action
 def ping(update, context):
     start_time = time.time()
-    results=get('https://api.telegram.org').json()
+    results=get(f'https://api.telegram.org').json()
     end_time = time.time()
     ping_time = round((end_time - start_time)*1000, 3)
     update.effective_message.reply_text("*Your current ping😶*\n`{}ms`".format(ping_time), parse_mode=ParseMode.MARKDOWN)
+    reply_text = f'\n\nPing: {results["list"][0]["ping"]}'
 
 # /ip is for private use
 __help__ = """
