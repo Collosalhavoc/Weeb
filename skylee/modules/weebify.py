@@ -1,6 +1,6 @@
 from typing import List
  
-from telegram import Bot, Update
+
 from telegram.ext import run_async
  
 from skylee import dispatcher
@@ -65,7 +65,8 @@ weebyfont = [
  
  
 @run_async
-def weebify(bot: Bot, update: Update, args: List[str]):
+def weebify(update,context):
+    args= context.args
     string = "  ".join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
