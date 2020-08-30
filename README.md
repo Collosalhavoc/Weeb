@@ -1,4 +1,4 @@
-# SKYLEEBOT
+# Ryumi
 
 > **:warning: Project unmaintained!** Developers and maintainers of this bot doesn't have much free time to maintain the project. You have the right
 > to fork the code, but no technical support will be given if problems arise on your fork.
@@ -14,6 +14,9 @@
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 ![logo](https://telegra.ph/file/0dd4a92bb893c1aaa6cee.jpg)
+
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a88ef893-32f6-452b-9ba4-9f609ac8ad35/deploy-status)](https://app.netlify.com/sites/chirag0w0/deploys)
 
 A modular telegram Python bot running on python3 with an sqlalchemy database.
 
