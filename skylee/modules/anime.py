@@ -3,8 +3,8 @@ from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CommandHandler
 from telegram.ext.dispatcher import run_async
 
-from misaki import dispatcher
-from misaki.modules.helper_funcs.alternate import typing_action
+from skylee import dispatcher
+from skylee.modules.helper_funcs.alternate import typing_action
 
 
 def shorten(description, info="anilist.co"):
