@@ -1,8 +1,9 @@
 import time
 
-from skylee.modules.disable import DisableAbleCommandHandler
+from telegram.ext import run_async
 
 from skylee import dispatcher
+from skylee.modules.disable import DisableAbleCommandHandler
 
 @run_async 
 def ping(update, context):
@@ -13,3 +14,9 @@ def ping(update, context):
     update.effective_message.reply_text("*Your current ping😶*\n`{}ms`".format(ping_time), parse_mode=ParseMode.MARKDOWN)
     
     
+PING_HANDLER = DisableAbleCommandHandler("ping", ping, pass_args=True)
+ 
+dispatcher.add_handler(PING_HANDLER)
+ 
+__command_list__ = ["ping"]
+__handlers__ = [PING_HANDLER]
