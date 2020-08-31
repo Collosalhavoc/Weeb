@@ -527,7 +527,11 @@ An "odds and ends" module for small, simple commands which don't really fit anyw
  × /magisk - Gets the latest magisk release for Stable/Beta/Canary.
  × /device <codename> - Gets android device basic info from its codename.
  × /twrp <codename> -  Gets latest twrp for the android device using the codename.
+ 
+ When marked as AFK, any mentions will be replied to with a message to say you're not available!
 
+ × /afk <reason>: Mark yourself as AFK.
+ × brb <reason>: Same as the afk command - but not a command.
 """
 
 __mod_name__ = "Miscs"
