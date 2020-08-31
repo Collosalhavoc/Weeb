@@ -344,8 +344,16 @@ def manga(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
+            
+            
+__help__ = """
 
+To search for your desired anime use format:
+format= /anime <query>
+   """
+__mod_name__ = "Anime"
 
+    
 AIRING_HANDLER = CommandHandler("airing", airing)
 ANIME_HANDLER = CommandHandler("anime", anime)
 CHARACTER_HANDLER = CommandHandler("character", character)
