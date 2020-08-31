@@ -369,23 +369,19 @@ def put_chat(chat_id, value, chat_data):
 def get_chat(chat_id, chat_data):
     # print(chat_data)
     try:
-        value = chat_data[chat_id]["backups"]
-        return value
-    except KeyError:
-        return {"status": False, "value": False}
-
-
-__mod_name__ = "Backups"
-
-__help__ = """
-*Only for chat administrator:*
+        value = chat_data[chat_id]["backups"]*Backups module ( only for chat administrator):*
 
  × /import: Reply to the backup file for the butler / emilia group to import as much as possible, making transfers very easy! \
  Note that files / photos cannot be imported due to telegram restrictions.
 
  × /export: Export group data, which will be exported are: rules, notes (documents, images, music, video, audio, voice, text, text buttons) \
 
-"""
+        return value
+    except KeyError:
+        return {"status": False, "value": False}
+
+
+
 
 IMPORT_HANDLER = CommandHandler("import", import_data)
 EXPORT_HANDLER = CommandHandler("export", export_data, pass_chat_data=True)
