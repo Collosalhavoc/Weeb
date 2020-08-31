@@ -532,6 +532,15 @@ An "odds and ends" module for small, simple commands which don't really fit anyw
 
  × /afk <reason>: Mark yourself as AFK.
  × brb <reason>: Same as the afk command - but not a command.
+ 
+ 
+ 
+*Weather module:*
+
+ × /weather <city>: Gets weather information of particular place!
+
+ \* To prevent spams weather command and the output will be deleted after 30 seconds
+
 """
 
 __mod_name__ = "Miscs"
