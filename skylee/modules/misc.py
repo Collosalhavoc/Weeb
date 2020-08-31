@@ -528,6 +528,7 @@ An "odds and ends" module for small, simple commands which don't really fit anyw
  × /device <codename> - Gets android device basic info from its codename.
  × /twrp <codename> -  Gets latest twrp for the android device using the codename.
  
+ *AFK MODULE*
  When marked as AFK, any mentions will be replied to with a message to say you're not available!
 
  × /afk <reason>: Mark yourself as AFK.
@@ -540,6 +541,14 @@ An "odds and ends" module for small, simple commands which don't really fit anyw
  × /weather <city>: Gets weather information of particular place!
 
  \* To prevent spams weather command and the output will be deleted after 30 seconds
+
+*Backups module ( only for chat administrator):*
+
+ × /import: Reply to the backup file for the butler / emilia group to import as much as possible, making transfers very easy! \
+ Note that files / photos cannot be imported due to telegram restrictions.
+
+ × /export: Export group data, which will be exported are: rules, notes (documents, images, music, video, audio, voice, text, text buttons) \
+
 
 """
 
