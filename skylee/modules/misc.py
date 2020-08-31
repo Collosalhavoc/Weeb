@@ -521,6 +521,13 @@ An "odds and ends" module for small, simple commands which don't really fit anyw
  × /reverse : Reverse searches image or stickers on google.
  × /gdpr: Deletes your information from the bot's database. Private chats only.
  × /markdownhelp: Quick summary of how markdown works in telegram - can only be called in private chats.
+ 
+ *Android related commands:*
+
+ × /magisk - Gets the latest magisk release for Stable/Beta/Canary.
+ × /device <codename> - Gets android device basic info from its codename.
+ × /twrp <codename> -  Gets latest twrp for the android device using the codename.
+
 """
 
 __mod_name__ = "Miscs"
