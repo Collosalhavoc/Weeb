@@ -370,10 +370,9 @@ def get_chat(chat_id, chat_data):
     # print(chat_data)
     try:
         value = chat_data[chat_id]["backups"]
-	return value
+        return value
     except KeyError:
-        return {"status": False, "value": False}	
-
+        return {"status": False, "value": False}
  
 
 IMPORT_HANDLER = CommandHandler("import", import_data)
