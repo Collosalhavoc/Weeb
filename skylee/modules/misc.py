@@ -4,6 +4,7 @@ import wikipedia
 import time
 from typing import Optional, List
 from requests import get
+from pythonping import ping as ping3
 
 from io import BytesIO
 from random import randint
