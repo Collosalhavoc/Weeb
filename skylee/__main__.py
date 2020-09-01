@@ -238,14 +238,16 @@ def help_button(update, context):
                 query.message.edit_text(
                 text=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
-                reply_markup=InlineKeyboardMarkup(paginate_modules(-1, HELPABLE, "help")))
+                reply_markup=InlineKeyboardMarkup(
+                     paginate_modules(curr_page -1, HELPABLE, "help")))
                 
         elif next_match:
             next_page = int(next_match.group(1))
             query.message.edit_text(
                 text=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
-                reply_markup=InlineKeyboardMarkup(paginate_modules(+1, HELPABLE, "help")))
+                reply_markup=InlineKeyboardMarkup(
+                     paginate_modules(next_page +1, HELPABLE, "help")))
                 
 
         elif back_match:
