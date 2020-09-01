@@ -4,7 +4,7 @@ import wikipedia
 import time
 from typing import Optional, List
 from requests import get
-from pythonping import ping as ping3
+from pythonping import ping
 
 from io import BytesIO
 from random import randint
@@ -502,19 +502,17 @@ def stats(update, context):
 @run_async
 @typing_action
 def ping(update, context):
-    tg_api = ping3("api.telegram.org", count=4)
-    google = ping3("google.com", count=4)
-    text = "*Pong!*\n"
-    text += "Average speed to Telegram bot API server - `{}` ms\n".format(
-        tg_api.rtt_avg_ms
+    tg_api = ping("api.telegram.org", count=4)
+    google = ping("google.com", count=4)
+    msg = update.effective_message
+    start_time = time.time()
+    message = msg.reply_text("Pinging...")
+    end_time = time.time()
+    ping_time = round((end_time - start_time) * 1000, 3)
+    message.edit_text(
+        "*Pong!!!*\n`{}ms`".format(ping_time), parse_mode=ParseMode.MARKDOWN
     )
-    if google.rtt_avg:
-        gspeed = google.rtt_avg
-    else:
-        gspeed = google.rtt_avg
-    text += "Average speed to Google - `{}` ms".format(gspeed)
-    update.effective_message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
-
+    
 # /ip is for private use
 __help__ = """
 An "odds and ends" module for small, simple commands which don't really fit anywhere
