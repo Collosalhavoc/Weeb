@@ -257,18 +257,11 @@ def help_button(update, context):
                 reply_markup=InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help")))
 
         # ensure no spinny white circle
-        query.message.delete()
-        context.bot.answer_callback_query(query.id)
-    except Exception as excp:
-        if excp.message == "Message is not modified":
-            pass
-        elif excp.message == "Query_id_invalid":
-            pass
-        elif excp.message == "Message can't be deleted":
-            pass
-        else:
-            query.message.edit_text(excp.message)
-            LOGGER.exception("Exception in help buttons. %s", str(query.data))
+        bot.answer_callback_query(query.id)
+        # query.message.delete()
+
+    except BadRequest:
+        pass
 
 
 @run_async
