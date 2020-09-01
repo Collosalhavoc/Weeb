@@ -498,15 +498,21 @@ def stats(update, context):
         "Current stats:\n" + "\n".join([mod.__stats__() for mod in STATS])
     )
 
-@run_async 
+@run_async
 @typing_action
 def ping(update, context):
-    start_time = time.time()
-    results=get(f'https://api.telegram.org').json()
-    end_time = time.time()
-    ping_time = round((end_time - start_time)*1000, 3)
-    update.effective_message.reply_text("*Your current ping😶*\n`{}ms`".format(ping_time), parse_mode=ParseMode.MARKDOWN)
-    reply_text = f'\n\nPing: {results["list"][0]["ping"]}'
+    tg_api = ping3("api.telegram.org", count=4)
+    google = ping3("google.com", count=4)
+    text = "*Pong!*\n"
+    text += "Average speed to Telegram bot API server - `{}` ms\n".format(
+        tg_api.rtt_avg_ms
+    )
+    if google.rtt_avg:
+        gspeed = google.rtt_avg
+    else:
+        gspeed = google.rtt_avg
+    text += "Average speed to Google - `{}` ms".format(gspeed)
+    update.effective_message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
 
 # /ip is for private use
 __help__ = """
