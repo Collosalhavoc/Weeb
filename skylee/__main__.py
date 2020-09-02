@@ -7,6 +7,7 @@ from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryHandler
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
+from telegram.error import BadRequest
 
 from skylee import (
     dispatcher,
@@ -51,7 +52,7 @@ buttons = [
     ]
 ]
 
-buttons += [[InlineKeyboardButton(text="Help & Commands ❔", callback_data="HELP_STRINGS")]]
+buttons += [[InlineKeyboardButton(text="Help & Commands ❔", callback_data="help_back")]]
 
 
 HELP_STRINGS = f"""
