@@ -52,7 +52,7 @@ buttons = [
     ]
 ]
 
-buttons += [[InlineKeyboardButton(text="Help & Commands ❔", callback_data="HELP_STRINGS")]]
+buttons += [[InlineKeyboardButton(text="Help & Commands ❔", callback_data="help")]]
 
 
 HELP_STRINGS = f"""
