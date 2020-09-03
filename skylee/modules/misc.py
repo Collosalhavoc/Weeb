@@ -518,8 +518,8 @@ def ping(update, context):
  
 @run_async
 @typing_action
-@app.on_message(filters.user(AdminSettings) & filters.command("ocr", Command))
-
+ghogh
+def ocr(update, context):
 OCR_SPACE_API_KEY = '30dd97e2b588957'
 async def ocr_space_file(filename,overlay=False,api_key=OCR_SPACE_API_KEY,language='eng'):
     payload = {
@@ -534,7 +534,6 @@ async def ocr_space_file(filename,overlay=False,api_key=OCR_SPACE_API_KEY,langua
             data=payload,
         )
     return r.json()
-def ocr(update, context):
     cmd = message.context
     lang_code = ''
     if len(cmd) > 1:
