@@ -518,62 +518,13 @@ def ping(update, context):
  
 
 
-@run_async
-@typing_action
-def ocr(update, context):
-OCR_SPACE_API_KEY = '30dd97e2b588957'
-async def ocr_space_file(filename,overlay=False,api_key=OCR_SPACE_API_KEY,language='eng'):
-    payload = {
-        'isOverlayRequired': overlay,
-        'apikey': api_key,
-        'language': language,
-    }
-    with open(filename, 'rb') as f:
-        r = requests.post(
-            'https://api.ocr.space/parse/image',
-            files={filename: f},
-            data=payload,
-        )
-    return r.json()
-    cmd = message.context
-    lang_code = ''
-    if len(cmd) > 1:
-        lang_code = " ".join(cmd[1:])
-    elif len(cmd) == 1:
-        lang_code = 'eng'
-    replied = message.reply_to_message
-    if not replied:
-        await message.delete()
-        return
-    if replied.video:
-        await message.delete()
-        return
-    if replied.document:
-        await message.delete()
-        return
-    if replied.voice:
-        await message.delete()
-        return
-    if replied.audio:
-        await message.delete()
-        return
-    if replied.photo:
-        reply_p = replied.photo
-    elif replied.sticker:
-        reply_p = replied.sticker
-    downloaded_file_name = await client.download_media(reply_p, 'nana/cache/file.png')
-    test_file = await ocr_space_file(filename=downloaded_file_name,language=lang_code)
-    try:
-        ParsedText = test_file["ParsedResults"][0]["ParsedText"]
-    except BaseException as e:
-        await message.reply(e)
-    else:
-        if ParsedText == 'ParsedResults':
-            await message.delete()
-            return
-        else:
-            await message.reply(f"`{ParsedText}`")
-    os.remove(downloaded_file_name)
+
+
+
+
+
+
+
     
 # /ip is for private use
 __help__ = """
@@ -623,7 +574,7 @@ __mod_name__ = "Miscs"
 
 ID_HANDLER = DisableAbleCommandHandler("id", get_id, pass_args=True)
 OCR_HANDLER = DisableAbleCommandHandler("ocr", ocr)
-PING_HANDLER=DisableAbleCommandHandler("ping",ping)
+
 INFO_HANDLER = DisableAbleCommandHandler("info", info, pass_args=True)
 ECHO_HANDLER = CommandHandler("echo", echo, filters=CustomFilters.sudo_filter)
 MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help, filters=Filters.private)
@@ -655,4 +606,4 @@ dispatcher.add_handler(STAFFLIST_HANDLER)
 dispatcher.add_handler(REDDIT_MEMES_HANDLER)
 dispatcher.add_handler(SRC_HANDLER)
 dispatcher.add_handler(PING_HANDLER)
-dispatcher.add_handler(OCR_HANDLER)
+
