@@ -516,9 +516,10 @@ def ping(update, context):
     
 
  
+
+
 @run_async
 @typing_action
-ghogh
 def ocr(update, context):
 OCR_SPACE_API_KEY = '30dd97e2b588957'
 async def ocr_space_file(filename,overlay=False,api_key=OCR_SPACE_API_KEY,language='eng'):
