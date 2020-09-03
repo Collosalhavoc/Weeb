@@ -573,7 +573,7 @@ An "odds and ends" module for small, simple commands which don't really fit anyw
 __mod_name__ = "Miscs"
 
 ID_HANDLER = DisableAbleCommandHandler("id", get_id, pass_args=True)
-OCR_HANDLER = DisableAbleCommandHandler("ocr", ocr)
+PING_HANDLER = DisableAbleCommandHandler("ping", ping)
 
 INFO_HANDLER = DisableAbleCommandHandler("info", info, pass_args=True)
 ECHO_HANDLER = CommandHandler("echo", echo, filters=CustomFilters.sudo_filter)
