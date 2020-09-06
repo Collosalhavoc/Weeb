@@ -108,10 +108,14 @@ __command_list__ = ["morse"]
 __handlers__ = [MORSE_HANDLER]
  
 __help__ = """
- 
+Morse help-->Fermi Paradox
+
+Usage: /morse <your text>
+(I will add reply feature later so that u can get morse code just by replying to a text)
+
 Here is the Morse Notation:
 [Notation👇](https://telegra.ph/file/e5df0a7f4ae73497c4101.jpg)
-Morse help-->Fermi Paradox
+
    """
 __mod_name__ = "Morse"
 
