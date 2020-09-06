@@ -110,7 +110,7 @@ __handlers__ = [MORSE_HANDLER]
 __help__ = """
  
 Here is the Morse Notation:
-(https://telegra.ph/file/e5df0a7f4ae73497c4101.jpg)
+[Notation👇](https://telegra.ph/file/e5df0a7f4ae73497c4101.jpg)
 
    """
 __mod_name__ = "Morse"
