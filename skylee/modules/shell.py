@@ -2,7 +2,7 @@
 # Written by t.me/Zero_cool7870 and t.me/TheRealPhoenix
  
 from skylee import dispatcher, LOGGER
-from telegram import Bot, Update
+from telegram import update, context
 from telegram.ext.dispatcher import run_async
 from skylee.modules.helper_funcs.chat_status import dev_plus
 from skylee.modules.helper_funcs.misc import sendMessage
