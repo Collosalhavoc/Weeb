@@ -556,7 +556,14 @@ def ram(update, context):
     )
  
 
-
+@run_async
+@typing_action
+@sudo_plus
+def stats(bot: Bot, update: Update):
+    stats = "Current stats:\n" + "\n".join([mod.__stats__() for mod in STATS])
+    result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
+    update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
+    
 
     
 # /ip is for private use
