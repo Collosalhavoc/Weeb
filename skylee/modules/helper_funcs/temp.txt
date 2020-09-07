@@ -1,0 +1,1 @@
+bot.send_chat_action(-1001410030001, "typing")
