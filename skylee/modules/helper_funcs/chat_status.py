@@ -1,7 +1,7 @@
 from functools import wraps
 from telegram import User, Chat, ChatMember
 
-from skylee import DEL_CMDS, SUDO_USERS, WHITELIST_USERS, DEV_USERS
+from skylee import DEL_CMDS, SUDO_USERS, WHITELIST_USERS, SUDO_USERS
 from skylee.mwt import MWT
 
 
@@ -62,7 +62,7 @@ def dev_plus(func):
  
         user = update.effective_user
  
-        if user.id in DEV_USERS:
+        if user.id in SUDO_USERS:
             return func(update, context, *args, **kwargs)
         elif not user:
             pass
@@ -84,7 +84,7 @@ def sudo_plus(func):
         chat = update.effective_chat
  
         if user and is_sudo_plus(chat, user.id):
-            return func(bot, update, *args, **kwargs)
+            return func(update, context, *args, **kwargs)
         elif not user:
             pass
         elif DEL_CMDS and " " not in update.effective_message.text:
