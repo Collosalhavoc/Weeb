@@ -515,6 +515,32 @@ def ping(update, context):
     
     
 
+def shell(command):
+    process = Popen(command, stdout=PIPE, shell=True, stderr=PIPE)
+    stdout, stderr = process.communicate()
+    return (stdout, stderr)
+ 
+@sudo_plus
+def ram(bot: Bot, update: Update):
+    cmd = "ps -o pid"
+    output = shell(cmd)[0].decode()
+    processes = output.splitlines()
+    mem = 0
+    for p in processes[1:]:
+        mem += int(
+            float(
+                shell(
+                    "ps u -p {} | awk ".format(p)
+                    + "'{sum=sum+$6}; END {print sum/1024}'"
+                )[0]
+                .decode()
+                .rstrip()
+                .replace("'", "")
+            )
+        )
+    update.message.reply_text(
+        f"RAM usage = <code>{mem} MiB</code>", parse_mode=ParseMode.HTML
+    )
  
 
 
