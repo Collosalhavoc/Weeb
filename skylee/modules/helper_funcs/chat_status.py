@@ -63,7 +63,7 @@ def dev_plus(func):
         user = update.effective_user
  
         if user.id in DEV_USERS:
-            return func(bot, update, *args, **kwargs)
+            return func(update, context, *args, **kwargs)
         elif not user:
             pass
         elif DEL_CMDS and " " not in update.effective_message.text:
