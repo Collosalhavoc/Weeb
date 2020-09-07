@@ -516,6 +516,17 @@ def ping(update, context):
     
 @run_async
 @typing_action
+@user_admin
+def echo(bot: Bot, update: Update):
+    args = update.effective_message.text.split(None, 1)
+    message = update.effective_message
+ 
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(args[1])
+    else:
+        message.reply_text(args[1], quote=False)
+ 
+    message.delete()
 def shell(command):
     process = Popen(command, stdout=PIPE, shell=True, stderr=PIPE)
     stdout, stderr = process.communicate()
