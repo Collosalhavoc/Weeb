@@ -527,6 +527,7 @@ def echo(bot: Bot, update: Update):
         message.reply_text(args[1], quote=False)
  
     message.delete()
+    
 def shell(command):
     process = Popen(command, stdout=PIPE, shell=True, stderr=PIPE)
     stdout, stderr = process.communicate()
