@@ -59,7 +59,6 @@ normiefont = [
     "×",
     "@",
     "_",
-    " ",
 ]
 morsefont = [
     ".- ",
@@ -114,14 +113,13 @@ morsefont = [
     "-..- ",
     ".--.-. ",
     "..--.- ",
-    "  ",
 ]
  
  
 @run_async
 def morse(update,context):
     args= context.args
-    string = "  ".join(args).lower()
+    string = "   ".join(args).lower()
     for normiecharacter in string:
         if normiecharacter in normiefont:
             morsecharacter = morsefont[normiefont.index(normiecharacter)]
