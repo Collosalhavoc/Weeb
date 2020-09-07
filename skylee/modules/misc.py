@@ -521,7 +521,7 @@ def shell(command):
     return (stdout, stderr)
  
 @sudo_plus
-def ram(bot: Bot, update: Update):
+def ram(update, context):
     cmd = "ps -o pid"
     output = shell(cmd)[0].decode()
     processes = output.splitlines()
