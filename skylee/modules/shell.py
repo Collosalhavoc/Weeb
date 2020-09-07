@@ -18,7 +18,7 @@ def shell(command):
  
 @dev_plus
 @run_async
-def shellExecute(bot: Bot, update: Update):
+def shellExecute(update, context):
     cmd = update.message.text.split(" ", maxsplit=1)
     if len(cmd) == 1:
         sendMessage("No command provided!", bot, update)
