@@ -517,7 +517,7 @@ def ping(update, context):
 @run_async
 @typing_action
 @user_admin
-def echo(bot: Bot, update: Update):
+def echo(update, context):
     args = update.effective_message.text.split(None, 1)
     message = update.effective_message
  
@@ -559,7 +559,7 @@ def ram(update, context):
 @run_async
 @typing_action
 @sudo_plus
-def stats(bot: Bot, update: Update):
+def stats(update, context):
     stats = "Current stats:\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
