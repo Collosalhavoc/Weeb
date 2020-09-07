@@ -1,12 +1,13 @@
 # Shell command executor
 # Written by t.me/Zero_cool7870 and t.me/TheRealPhoenix
  
+from typing import List
+from telegram.ext import run_async
+from skylee import dispatcher
+from skylee.modules.disable import DisableAbleCommandHandler
 from skylee import dispatcher, LOGGER
-from telegram import update, context
-from telegram.ext.dispatcher import run_async
 from skylee.modules.helper_funcs.chat_status import dev_plus
 from skylee.modules.helper_funcs.misc import sendMessage
-from telegram.ext import CommandHandler
 from subprocess import Popen, PIPE
  
  
@@ -47,5 +48,5 @@ def shellExecute(update, context):
             sendMessage(f"<code>{output[0].decode()}</code>", bot, update)
  
  
-shell_handler = CommandHandler(("sh", "shell"), shellExecute)
+shell_handler = DisableAbleCommandHandler(("sh", "shell"), shellExecute)
 dispatcher.add_handler(shell_handler)
