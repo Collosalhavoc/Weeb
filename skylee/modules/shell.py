@@ -50,3 +50,6 @@ def shellExecute(update, context):
  
 shell_handler = DisableAbleCommandHandler(("sh", "shell"), shellExecute)
 dispatcher.add_handler(shell_handler)
+ 
+__command_list__ = ["sh"]
+__handlers__ = [shell_handler]
