@@ -58,7 +58,7 @@ def is_user_admin(chat: Chat, user_id: int, member: ChatMember = None) -> bool:
 
 def dev_plus(func):
     @wraps(func)
-    def is_dev_plus_func(bot: Bot, update: Update, *args, **kwargs):
+    def is_dev_plus_func(update, context, *args, **kwargs):
  
         user = update.effective_user
  
@@ -79,7 +79,7 @@ def dev_plus(func):
  
 def sudo_plus(func):
     @wraps(func)
-    def is_sudo_plus_func(bot: Bot, update: Update, *args, **kwargs):
+    def is_sudo_plus_func(update, context, *args, **kwargs):
         user = update.effective_user
         chat = update.effective_chat
  
