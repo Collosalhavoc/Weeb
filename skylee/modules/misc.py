@@ -513,8 +513,8 @@ def ping(update, context):
         "*Pong!!!*\n`{}ms`".format(ping_time), parse_mode=ParseMode.MARKDOWN
     )
     
-    
-
+@run_async
+@typing_action
 def shell(command):
     process = Popen(command, stdout=PIPE, shell=True, stderr=PIPE)
     stdout, stderr = process.communicate()
@@ -542,12 +542,6 @@ def ram(bot: Bot, update: Update):
         f"RAM usage = <code>{mem} MiB</code>", parse_mode=ParseMode.HTML
     )
  
-
-
-
-
-
-
 
 
 
@@ -600,7 +594,7 @@ __mod_name__ = "Miscs"
 
 ID_HANDLER = DisableAbleCommandHandler("id", get_id, pass_args=True)
 PING_HANDLER = DisableAbleCommandHandler("ping", ping)
-
+RAM_HANDLER = DisableAbleCommandHandler("ram",ram)
 INFO_HANDLER = DisableAbleCommandHandler("info", info, pass_args=True)
 ECHO_HANDLER = CommandHandler("echo", echo, filters=CustomFilters.sudo_filter)
 MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help, filters=Filters.private)
@@ -632,4 +626,5 @@ dispatcher.add_handler(STAFFLIST_HANDLER)
 dispatcher.add_handler(REDDIT_MEMES_HANDLER)
 dispatcher.add_handler(SRC_HANDLER)
 dispatcher.add_handler(PING_HANDLER)
+dispatcher.add_handler(RAM_HANDLER)
 
