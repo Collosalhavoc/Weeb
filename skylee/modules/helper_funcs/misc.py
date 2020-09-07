@@ -135,3 +135,13 @@ def build_keyboard_parser(bot, chat_id, buttons):
             keyb.append([InlineKeyboardButton(btn.name, url=btn.url)])
 
     return keyb
+
+
+ 
+def sendMessage(text: str, update, context):
+    return bot.send_message(
+        update.message.chat_id,
+        reply_to_message_id=update.message.message_id,
+        text=text,
+        parse_mode=ParseMode.HTML,
+    )
