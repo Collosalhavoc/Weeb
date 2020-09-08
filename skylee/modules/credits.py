@@ -14,6 +14,8 @@ __help__ = """
 @TheRealPhoenix
 @fermiparadox
 
+
+more people helped,can be found in the commits and codes 
 """
 
 __mod_name__ = "Credits"
