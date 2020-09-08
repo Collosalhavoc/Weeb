@@ -7,12 +7,12 @@ __help__ = """
 
 *These persons helped me a lot in direct and indirect ways to build my bot*
 
-[@dank_as_fuck(https://t.me/dank_as_fuck)
+[@dank_as_fuck](https://t.me/dank_as_fuck)
 @GeekyRash
 @pokurt
 @Dragsama
 @TheRealPhoenix
-@fermiparadox
+[@Thefermiparadox](https://t.me/Thefermiparadox)
 
 
 
