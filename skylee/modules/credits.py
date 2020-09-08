@@ -3,7 +3,7 @@ from typing import List
  
 from telegram.ext import run_async
  
-__help__ = 
+__help__ = """
 
 "*These persons helped me a lot in direct and indirect ways to build my bot*"
 
@@ -42,6 +42,6 @@ def event(update, context):
         await asyncio.sleep(animation_interval)
 
         await event.edit(animation_chars[i % 30])
-
+"""
 
 __mod_name__ = "Credits"
