@@ -33,7 +33,7 @@ from skylee.modules.helper_funcs.alternate import typing_action
 
 
 PM_START_TEXT = f"""
-Hey there! my name is *{dispatcher.bot.first_name}*. If you have any questions on how to use me, Click Help button.
+Hey there! my name is *{dispatcher.bot.first_name}*. If you have any questions on how to use me just type in /help
 
 I'm an anime themed bot and I am here to make your group management fun and easy!
 i have lots of handy features, such as flood control, a warning system, a note keeping system, and even replies on predetermined filters.
@@ -52,8 +52,7 @@ buttons = [
     ]
 ]
 
-buttons += [[InlineKeyboardButton(text="Help & Commands ❔", callback_data="help_back")]]
-
+buttons += [[InlineKeyboardButton(text="Help & Commands ❔", callback_data="HELP_STRINGS")]]
 
 HELP_STRINGS = f"""
 Hello there! My name is *{dispatcher.bot.first_name}*.
