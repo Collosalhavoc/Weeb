@@ -7,12 +7,7 @@ __help__ = """
 
 "*These persons helped me a lot in direct and indirect ways to build my bot*"
 
-@run_async
-def event(update, context):
 
-    if event.fwd_from:
-
-        return
 
     animation_interval = 1
 
