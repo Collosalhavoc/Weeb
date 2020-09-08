@@ -5,7 +5,7 @@ from telegram.ext import run_async
  
 __help__ = """
 
-"*These persons helped me a lot in direct and indirect ways to build my bot*"
+*These persons helped me a lot in direct and indirect ways to build my bot*
 
 
 
