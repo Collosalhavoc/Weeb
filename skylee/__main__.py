@@ -48,7 +48,7 @@ buttons = [
         InlineKeyboardButton(
             text="Add to Group 👥", url="t.me/Ryumi_bot?startgroup=true"
         ),
-        InlineKeyboardButton(text="Updates 📢", url="https://t.me/messagedumpgroup"),
+        InlineKeyboardButton(text="Updates 📢", url="https://t.me/RyumiSupport"),
     ]
 ]
 
