@@ -38,7 +38,7 @@ Hey there! my name is *{dispatcher.bot.first_name}*. If you have any questions o
 I'm an anime themed bot and I am here to make your group management fun and easy!
 i have lots of handy features, such as flood control, a warning system, a note keeping system, and even replies on predetermined filters.
 
-Any issues or need help related to me? join our group [Ryumi support chat](https://t.me/messagedumpgroup).
+Any issues or need help related to me? join our group [Ryumi support chat](https://t.me/RyumiSupport).
 
 Wanna Add me to your Group? Just click the button below!
 """
