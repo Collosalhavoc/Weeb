@@ -488,16 +488,6 @@ def migrate_chats(update, context):
 
 
 def is_chat_allowed(update, context):
-    if len(WHITELIST_CHATS) != 0:
-        chat_id = update.effective_message.chat_id
-        if chat_id not in WHITELIST_CHATS:
-            context.bot.send_message(
-                chat_id=update.message.chat_id, text="Unallowed chat! Leaving..."
-            )
-            try:
-                context.bot.leave_chat(chat_id)
-            finally:
-                raise DispatcherHandlerStop
     if len(BLACKLIST_CHATS) != 0:
         chat_id = update.effective_message.chat_id
         if chat_id in BLACKLIST_CHATS:
@@ -508,7 +498,7 @@ def is_chat_allowed(update, context):
                 context.bot.leave_chat(chat_id)
             finally:
                 raise DispatcherHandlerStop
-    if len(WHITELIST_CHATS) != 0 and len(BLACKLIST_CHATS) != 0:
+    if len(BLACKLIST_CHATS) != 0:
         chat_id = update.effective_message.chat_id
         if chat_id in BLACKLIST_CHATS:
             context.bot.send_message(
